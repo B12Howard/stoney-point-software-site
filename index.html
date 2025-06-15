@@ -1,27 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Custom business automation and software solutions to save you time and money.">
-  <title>Modern Business Automation</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div data-include="header.html"></div>
-  <main>
-    <div data-include="case-studies.html"></div>
-    <div data-include="about.html"></div>
-    <div data-include="contact.html"></div>
-  </main>
-  <!-- <div data-include="footer.html"></div> -->
 
-  <script>
-    document.querySelectorAll('[data-include]').forEach(el => {
-      fetch(el.getAttribute('data-include'))
-        .then(res => res.text())
-        .then(html => el.innerHTML = html);
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real-world automation and engineering case studies.">
+    <title>Case Studies - Stoney Point Software LLC</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+       <img class="site-logo" src="images/stoneypoint-logo.png" alt="Stoney Point Software Logo">
+      <h1>Stoney Point Software</h1>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>See How We Turn Chaos Into Smart Automation</h2>
+        <p>Real-world business engineering projects that eliminated bottlenecks and unlocked growth.</p>
+        <div class="cta">
+          <a href="#contact">Let's Set Up A Free Discovery Call →</a>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h2>Our Clients</h2>
+      </section>
+      <section class="content">
+        <div class="client-logos">
+          <a href="https://ironsmith.cc/" class="client-logo" target="_blank" rel="noopener">
+            <img src="images/ironsmithlogo.png" alt="Ironsmith Logo">
+          </a>
+          <a href="https://www.remodelshowroom.com/" class="client-logo" target="_blank" rel="noopener">
+            <img src="images/remodel-showroom.svg" alt="Remodel Showroom Logo">
+          </a>
+          <a href="https://www.salmonmechanical.com/" class="client-logo" target="_blank" rel="noopener">
+            <img src="images/salmonmechanical.svg" alt="Salmon Mechanical Logo">
+          </a>
+        </div>
+      </section>
+
+      <section class="section-header">
+        <h2>Case Studies</h2>
+      </section>
+      <section class="case-studies-grid">
+        <div class="project">
+          <div class="section-label">Case Study 01</div>
+          <div class="project-header">📦 Plumbing Company: Automated Quoting System</div>
+          <div class="project-body">
+            <div class="project-image">
+              <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_1/0.jpg" alt="YouTube video thumbnail">
+              </a>
+            </div>
+            <div class="project-details">
+              <p><strong>Before:</strong> Staff manually created Google Sheet quotes, copying data from emails and handwritten notes — prone to errors and wasted time.</p>
+              <p><strong>Solution:</strong> We built a dynamic form system that automatically generated templated quotes, version-tracked changes, and routed approvals via email.</p>
+              <div class="impact">
+                ⏱️ Saved 10+ hours/week and eliminated 90% of manual errors.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="section-label">Case Study 02</div>
+          <div class="project-header">🏗️ Manufacturing Firm: Live Job Status Dashboard</div>
+          <div class="project-body">
+            <div class="project-image">
+              <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_2/0.jpg" alt="YouTube video thumbnail">
+              </a>
+            </div>
+            <div class="project-details">
+              <p><strong>Before:</strong> Teams updated job statuses via spreadsheets and email. Visibility was limited and deadlines were frequently missed.</p>
+              <p><strong>Solution:</strong> We integrated their ERP system and built a real-time dashboard for leadership to track jobs across departments, accessible from any device.</p>
+              <div class="impact">
+                📉 Reduced deadline misses by 40% and improved inter-department coordination.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="section-label">Case Study 03</div>
+          <div class="project-header">🏗️ Manufacturing Firm: Live Job Status Dashboard</div>
+          <div class="project-body">
+            <div class="project-image">
+              <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_3/0.jpg" alt="YouTube video thumbnail">
+              </a>
+            </div>
+            <div class="project-details">
+              <p><strong>Before:</strong> Teams updated job statuses via spreadsheets and email. Visibility was limited and deadlines were frequently missed.</p>
+              <p><strong>Solution:</strong> We integrated their ERP system and built a real-time dashboard for leadership to track jobs across departments, accessible from any device.</p>
+              <div class="impact">
+                📉 Reduced deadline misses by 40% and improved inter-department coordination.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="section-label">Case Study 04</div>
+          <div class="project-header">🏗️ Manufacturing Firm: Live Job Status Dashboard</div>
+          <div class="project-body">
+            <div class="project-image">
+              <a href="https://www.youtube.com/watch?v=VIDEO_ID_4" target="_blank">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_4/0.jpg" alt="YouTube video thumbnail">
+              </a>
+            </div>
+            <div class="project-details">
+              <p><strong>Before:</strong> Teams updated job statuses via spreadsheets and email. Visibility was limited and deadlines were frequently missed.</p>
+              <p><strong>Solution:</strong> We integrated their ERP system and built a real-time dashboard for leadership to track jobs across departments, accessible from any device.</p>
+              <div class="impact">
+                📉 Reduced deadline misses by 40% and improved inter-department coordination.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="testimonial">
+        “We didn't know software like this was even possible for a company our size. It's saved us so much stress — everything just works now.”<br>
+        — Operations Lead, Regional Plumbing Co.
+      </div>
+
+      <section class="section-header">
+        <h2>About Us</h2>
+      </section>
+      <section class="content">
+        <h2>Who We Are</h2>
+        <p>We're a team of engineers and problem-solvers who believe in building lean, smart systems to empower businesses to operate at their best.</p>
+        <h3>Our Mission</h3>
+        <p>To eliminate friction and inefficiency through thoughtful automation.</p>
+      </section>
+
+      <section class="section-header">
+        <h2>Contact Us</h2>
+      </section>
+      <section id="contact" class="content">
+        <h2>Let's Build Something Together</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label>Name: <input type="text" name="name" required></label>
+          <label>Email: <input type="email" name="email" required></label>
+          <label>Message: <textarea name="message" required></textarea></label>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <div class="cta">
+        <a href="contact.html">Let's Automate Your Workflow →</a>
+      </div>
+    </main>
+    <footer>© 2025 Stoney Point Software LLC</footer>
+  </body>
+
 </html>
