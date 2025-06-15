@@ -380,3 +380,12 @@ footer {
   object-fit: contain;
   margin-right: 10px;
 }
+
+a {
+  color: #ffd17a; /* Accent Gold */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
