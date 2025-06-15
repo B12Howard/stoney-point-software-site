@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom business automation and software solutions to save you time and money.">
+  <title>Modern Business Automation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div data-include="header.html"></div>
+  <main>
+    <div data-include="case-studies.html"></div>
+    <div data-include="about.html"></div>
+    <div data-include="contact.html"></div>
+  </main>
+  <!-- <div data-include="footer.html"></div> -->
+
+  <script>
+    document.querySelectorAll('[data-include]').forEach(el => {
+      fetch(el.getAttribute('data-include'))
+        .then(res => res.text())
+        .then(html => el.innerHTML = html);
+    });
+  </script>
+</body>
+</html>
