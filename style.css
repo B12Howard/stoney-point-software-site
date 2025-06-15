@@ -273,6 +273,18 @@ footer {
   border-radius: 6px;
 }
 
+.testimonial-meta {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.testimonial-app,
+.testimonial-date {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
 .cta {
   text-align: center;
   margin: 3rem 0 0;
