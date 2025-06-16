@@ -115,17 +115,18 @@ form textarea {
 
 button[type="submit"] {
   padding: 0.75rem 1.5rem;
-  background: var(--brand-dark);
-  color: #f9fafb;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  background: linear-gradient(to bottom, #ffd17a, #e6b44a);
+  color: var(--brand-navy);
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background: var(--brand-navy);
+  background: linear-gradient(to bottom, #e6b44a, #cc9e35);
 }
 
 footer {
@@ -400,8 +401,12 @@ a:hover {
   height: 100%;
   background: 
     linear-gradient(135deg, rgba(74, 106, 248, 0.6), rgba(22, 42, 62, 0.85), rgba(255, 209, 122, 0.6)),
-    url('images/home-bg.png') center center / cover no-repeat;
+    url('images/home-bg-min.png') center center / cover no-repeat;
   filter: grayscale(.1) brightness(.8);
   z-index: -1;
   opacity: 1;
+}
+
+#contact a {
+  color: #2b1ee2;
 }
