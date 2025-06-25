@@ -410,3 +410,52 @@ a:hover {
 #contact a {
   color: #2b1ee2;
 }
+
+.about-team {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.team-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.team-badge:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.team-image-wrapper {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: #eaeaea;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
