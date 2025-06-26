@@ -459,3 +459,58 @@ a:hover {
   object-fit: cover;
   display: block;
 }
+
+/* --- Custom Navigation Styles for Home and Blog --- */
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: 2rem;
+}
+
+.site-nav a {
+  color: #ffd17a;
+  background: rgba(67, 66, 86, 0.15);
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 1.08rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: #ffd17a;
+  color: #162a3e;
+  box-shadow: 0 2px 8px rgba(67,66,86,0.08);
+  text-decoration: none;
+}
+
+.site-nav a.active,
+.site-nav a[aria-current="page"] {
+  background: #fff6e1;
+  color: #162a3e;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(67,66,86,0.10);
+}
+
+@media (max-width: 768px) {
+  .site-nav {
+    margin-left: 0;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+  }
+  .site-nav a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.blog-list a, a.back-link{
+  color: #2b1ee2;
+}
