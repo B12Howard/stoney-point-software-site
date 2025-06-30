@@ -514,3 +514,42 @@ a:hover {
 .blog-list a, a.back-link{
   color: #2b1ee2;
 }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.service-item ul {
+  list-style: disc inside;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  margin: 0;
+}
+
+.service-item li {
+  margin-bottom: 1.25rem;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-item ul {
+    padding-left: 1.2rem;
+  }
+}
