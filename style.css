@@ -578,12 +578,14 @@ footer {
 
 /* Removed overly complex overlay */
 
+/* Client logos */
 .client-logos {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .client-logo {
@@ -598,7 +600,8 @@ footer {
 }
 
 .client-logo img {
-  max-width: 150px;
+  max-width: 200px;
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -607,6 +610,10 @@ footer {
   .client-logos {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .client-logo img {
+    max-width: 300px;
   }
 }
 
