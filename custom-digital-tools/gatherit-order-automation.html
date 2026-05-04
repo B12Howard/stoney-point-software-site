@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FF&E order automation for remodel businesses: GatherIt integration, Chrome extension for Google Workspace, and faster design-to-purchase checkout workflows." />
+  <title>FF&amp;E Cart Creation with GatherIt - Stoney Point Software</title>
+  <link rel="icon" href="../images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .zoomable-image {
+      width: 100%;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: zoom-in;
+      text-align: left;
+    }
+
+    .zoomable-image img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #f7f7f7;
+      display: block;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 9999;
+    }
+
+    .image-lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      width: min(1100px, 95vw);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      border: 0;
+      background: #fff;
+      color: #111;
+      padding: 0.35rem 0.65rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .lightbox-caption {
+      color: #f3f3f3;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-brand">
+      <a href="../index.html"><img class="site-logo" src="../images/stoneypoint-logo.png" alt="Stoney Point Software Logo" /></a>
+      <h1>Stoney Point Software</h1>
+    </div>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <h2>FF&amp;E Design to Shopping Cart for Faster Customer Approval</h2>
+      <p>A GatherIt integration and internal Chrome extension flow that moves product selections to payment quickly, so projects keep moving and cash comes in faster.</p>
+    </section>
+
+    <!-- <section class="section-header">
+      <h2>Watch the Demo</h2>
+    </section>
+    <section class="content">
+      <p>See the FF&amp;E checkout workflow in action.</p>
+      <div style="position:relative; width:100%; padding-top:56.25%;">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          title="FF&E design to shopping cart demo"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p><a href="https://www.youtube.com/watch?v=VIDEO_ID_HERE" target="_blank" rel="noopener">→ Watch on YouTube</a></p>
+    </section> -->
+
+    <section class="section-header">
+      <h2>What This Solves</h2>
+    </section>
+    <section class="content">
+      <p>
+        Many remodel teams still rely on email threads and signoff documents to turn FF&amp;E choices into paid orders. That was a problem for a home remodel business in New York.
+        That slows down design phases, adds friction for customers, and delays revenue. A custom Chrome extension that works directly in the GatherIt web app to move selections to payment quickly, so projects keep moving and cash comes in faster.
+      </p>
+      <ul class="custom-bullets">
+        <li><strong>Faster cash collection:</strong> Move from selection to payment without signoff documents.</li>
+        <li><strong>Shorter design to purchase cycle:</strong> Reduce delays between revisions and approvals.</li>
+        <li><strong>Less admin burden:</strong> Replace repetitive handoffs and manual tracking.</li>
+        <li><strong>Use any payment processor:</strong> Use your existing credit card payment processor.</li>
+        <li><strong>Payment alerts:</strong> Receive notifications when payments are received in Slack or your preferred messaging app.</li>
+      </ul>
+    </section>
+
+    <section class="section-header">
+      <h2>Ways To Export FF&amp;E Data to a Shopping Cart</h2>
+    </section>
+    <section class="content">
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>1) From the GatherIt Web App</h3>
+          <p>
+            The extension works directly with GatherIt so teams can select project items and create a customer-ready shopping cart.
+            This is the preferred path when teams are actively managing FF&amp;E inside GatherIt.
+          </p>
+        </div>
+        <div class="service-item">
+          <h3>2) From an Excel File</h3>
+          <p>
+            For teams that still export spreadsheet files, the extension can intercept the downloaded Excel file and to create acustomer-ready shopping cart.
+          </p>
+        </div>
+      </div>
+      <p>
+        <strong>Built in collaboration with GatherIt:</strong> We worked directly with <a href="https://gatherit.co/" target="_blank" rel="noopener">the GatherIt FF&amp;E specification platform</a> team early on, tested the API in a live remodel workflow, and shared feedback as we built the integration.
+      </p>
+    </section>
+
+    <section class="section-header">
+      <h2>How It Looks</h2>
+    </section>
+    <section class="content">
+      <p><strong>GatherIt + extension workflow:</strong> Initial item selection and cart creation.</p>
+      <div class="services-grid">
+        <div class="service-item">
+          <button class="zoomable-image" type="button" data-full-src="../images/gatherit/gatherit-selection.png" data-caption="In-app selection in GatherIt to create customer-specific shopping carts.">
+            <img src="../images/gatherit/gatherit-selection.png" alt="GatherIt product view with items selected for tote creation" />
+          </button>
+          <p><strong>In-app selection:</strong> Products are marked by the design or sales team to create customer-specific shopping carts.</p>
+        </div>
+        <div class="service-item">
+          <button class="zoomable-image" type="button" data-full-src="../images/gatherit/integrated-flow.png" data-caption="Designers and sales move from design decisions to purchasable carts.">
+            <img src="../images/gatherit/integrated-flow.png" alt="GatherIt screen and extension panel working together in one flow" />
+          </button>
+          <p><strong>Easy cart creation:</strong> Designers and sales move from design decisions to purchasable carts without DocuSign and heavy email back-and-forth.</p>
+        </div>
+      </div>
+      <p><strong>Customer-facing flow:</strong> Cart review, secure payment, and receipt confirmation.</p>
+      <div class="services-grid">
+        <div class="service-item">
+          <button class="zoomable-image" type="button" data-full-src="../images/gatherit/cart-page.png" data-caption="Customers review included products, quantities, and pricing before checkout.">
+            <img src="../images/gatherit/cart-page.png" alt="Customer cart page with selected remodel items before checkout" />
+          </button>
+          <p><strong>Cart page:</strong> Customers review included items and quantities before moving to payment.</p>
+        </div>
+        <div class="service-item">
+          <button class="zoomable-image" type="button" data-full-src="../images/gatherit/checkout-page.png" data-caption="Secure checkout form and order summary for customer credit card payment.">
+            <img src="../images/gatherit/checkout-page.png" alt="Secure checkout page showing order summary and payment form" />
+          </button>
+          <p><strong>Checkout page:</strong> Customers pay by credit card in a secure, simple checkout experience.</p>
+        </div>
+        <div class="service-item">
+          <button class="zoomable-image" type="button" data-full-src="../images/gatherit/receipt-email.png" data-caption="Receipt email confirms payment and provides final order details.">
+            <img src="../images/gatherit/receipt-email.png" alt="Receipt email confirmation sent after customer payment" />
+          </button>
+          <p><strong>Receipt and confirmation:</strong> The order is finalized with an email receipt and clear totals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-header">
+      <h2>Who This Is For</h2>
+    </section>
+    <section class="content">
+      <p>Best fit for upscale remodel and design-build businesses that run multi-phase design, purchase, redesign, and purchase cycles.</p>
+      <ul class="custom-bullets">
+        <li>Teams using GatherIt for FF&amp;E and needing a cleaner checkout handoff.</li>
+        <li>Teams still using spreadsheets and wanting a lower-friction bridge to payment.</li>
+        <li>Organizations inside Google Workspace that need internal Chrome extension workflows.</li>
+      </ul>
+    </section>
+
+    <section class="section-header">
+      <h2>Business Outcomes</h2>
+    </section>
+    <section class="content">
+      <ul class="custom-bullets">
+        <li><strong>Improved cashflow:</strong> Orders are paid sooner via customer credit cards.</li>
+        <li><strong>Faster project momentum:</strong> Design and purchasing phases move forward with less waiting.</li>
+        <li><strong>Reduced process friction:</strong> Less back-and-forth than DocuSign and email workflows.</li>
+        <li><strong>Higher team confidence:</strong> Sales and design staff are less hesitant to ask for payment.</li>
+      </ul>
+    </section>
+
+    <section class="section-header">
+      <h2>Related Work</h2>
+    </section>
+    <section class="content">
+      <ul class="custom-bullets">
+        <li><a href="../case-studies.html">FF&amp;E Vision Board to Checkout case study</a></li>
+        <li><a href="../custom-digital-tools/index.html">Custom Digital Tools services</a></li>
+        <li><a href="../development/custom-vs-offtheshelf.html">Custom software vs. off-the-shelf guide</a></li>
+      </ul>
+    </section>
+
+    <section class="section-header">
+      <h2>Next Step</h2>
+    </section>
+    <section class="content">
+      <h3>Get a Free 30 Minute Assessment</h3>
+      <p>We will review your current FF&amp;E approval and payment flow, then map the fastest path to a lower-friction customer checkout.</p>
+      <p><a href="../index.html#contact">→ Book your assessment</a></p>
+    </section>
+  </main>
+
+  <div id="image-lightbox" class="image-lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close image viewer">X</button>
+      <img id="lightbox-image" src="" alt="" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Stoney Point Software LLC</p>
+    <p>
+      <a href="../index.html">Home</a> &middot;
+      <a href="../case-studies.html">Case Studies</a> &middot;
+      <a href="../blog.html">Blog</a> &middot;
+      <a href="../index.html#contact">Contact</a>
+    </p>
+  </footer>
+  <script>
+    (function () {
+      var lightbox = document.getElementById("image-lightbox");
+      var lightboxImage = document.getElementById("lightbox-image");
+      var lightboxCaption = document.getElementById("lightbox-caption");
+      var closeButton = document.getElementById("lightbox-close");
+      var triggers = document.querySelectorAll(".zoomable-image");
+
+      function openLightbox(src, alt, caption) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || "";
+        lightboxCaption.textContent = caption || "";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        document.body.style.overflow = "";
+      }
+
+      triggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+          var image = trigger.querySelector("img");
+          var src = trigger.getAttribute("data-full-src") || image.src;
+          var caption = trigger.getAttribute("data-caption") || "";
+          openLightbox(src, image.alt, caption);
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && lightbox.classList.contains("open")) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
