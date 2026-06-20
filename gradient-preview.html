@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Shape Preview — Pick One</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { margin: 0; padding: 2rem; background: #e8e5e1; font-family: 'Epilogue', sans-serif; }
+    h1 { font-family: 'Noto Serif', serif; font-weight: 400; margin: 0 0 2rem; font-size: 1.4rem; color: #1c1c1a; }
+    .options { display: flex; flex-direction: column; gap: 1.5rem; max-width: 1000px; }
+    .option-label {
+      background: #1c1c1a;
+      color: #fcf9f6;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .preview {
+      position: relative;
+      background: #fcf9f6;
+      padding: 4rem 2.5rem;
+      min-height: 300px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .preview-shape {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 88%;
+      width: auto;
+      pointer-events: none;
+    }
+    .preview-text { position: relative; z-index: 1; max-width: 52%; }
+    .preview-text h2 {
+      margin: 0;
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #1c1c1a;
+    }
+    .preview-text p {
+      margin: 1rem 0 0;
+      font-size: 1rem;
+      color: #544248;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hero Shape Options — Pick One</h1>
+  <div class="options">
+
+    <!-- OPTION A: Faithful to logo — offset stones with internal faceting lines -->
+    <div class="option">
+      <div class="option-label">A — Faithful to logo (offset stones + faceting)</div>
+      <div class="preview">
+        <svg class="preview-shape" viewBox="0 0 320 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Stone 1: bottom, widest, slightly left -->
+          <polygon points="5,420 305,420 280,344 22,350" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="5" y1="420" x2="280" y2="344" stroke="#e0196a" stroke-width="2"/>
+          <line x1="305" y1="420" x2="22" y2="350" stroke="#e0196a" stroke-width="2"/>
+          <!-- Stone 2: offset right -->
+          <polygon points="42,330 312,324 288,256 58,262" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="42" y1="330" x2="288" y2="256" stroke="#e0196a" stroke-width="2"/>
+          <line x1="312" y1="324" x2="58" y2="262" stroke="#e0196a" stroke-width="2"/>
+          <!-- Stone 3: offset left -->
+          <polygon points="15,242 260,236 238,172 35,178" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="15" y1="242" x2="238" y2="172" stroke="#e0196a" stroke-width="2"/>
+          <line x1="260" y1="236" x2="35" y2="178" stroke="#e0196a" stroke-width="2"/>
+          <!-- Stone 4: offset right -->
+          <polygon points="52,158 248,153 228,96 68,101" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="52" y1="158" x2="228" y2="96" stroke="#e0196a" stroke-width="2"/>
+          <line x1="248" y1="153" x2="68" y2="101" stroke="#e0196a" stroke-width="2"/>
+          <!-- Stone 5: top, small, centered -->
+          <polygon points="108,82 200,78 190,38 116,42" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="108" y1="82" x2="190" y2="38" stroke="#e0196a" stroke-width="2"/>
+          <line x1="200" y1="78" x2="116" y2="42" stroke="#e0196a" stroke-width="2"/>
+        </svg>
+        <div class="preview-text">
+          <h2>From quote to payment, built the way your business works.</h2>
+          <p>Custom CPQ and client-facing sales tools for manufacturers, interior designers, and specialty trades.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION B: Abstract scattered composition -->
+    <div class="option">
+      <div class="option-label">B — Abstract scattered (same shapes, not stacked)</div>
+      <div class="preview">
+        <svg class="preview-shape" viewBox="0 0 360 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Shape 1: large, lower area -->
+          <polygon points="10,380 350,380 325,278 32,290" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="10" y1="380" x2="325" y2="278" stroke="#e0196a" stroke-width="2"/>
+          <line x1="350" y1="380" x2="32" y2="290" stroke="#e0196a" stroke-width="2"/>
+          <!-- Shape 2: medium, upper-left, overlapping -->
+          <polygon points="0,262 282,250 258,158 20,168" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="0" y1="262" x2="258" y2="158" stroke="#e0196a" stroke-width="2"/>
+          <line x1="282" y1="250" x2="20" y2="168" stroke="#e0196a" stroke-width="2"/>
+          <!-- Shape 3: small, upper-right -->
+          <polygon points="178,138 348,128 332,55 165,63" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="178" y1="138" x2="332" y2="55" stroke="#e0196a" stroke-width="2"/>
+          <line x1="348" y1="128" x2="165" y2="63" stroke="#e0196a" stroke-width="2"/>
+        </svg>
+        <div class="preview-text">
+          <h2>From quote to payment, built the way your business works.</h2>
+          <p>Custom CPQ and client-facing sales tools for manufacturers, interior designers, and specialty trades.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION C: 1–2 large stones, bold and minimal -->
+    <div class="option">
+      <div class="option-label">C — One or two large stones (bold, minimal)</div>
+      <div class="preview">
+        <svg class="preview-shape" viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Stone 1: very large, dominant -->
+          <polygon points="0,260 380,260 350,148 30,160" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="0" y1="260" x2="350" y2="148" stroke="#e0196a" stroke-width="2"/>
+          <line x1="380" y1="260" x2="30" y2="160" stroke="#e0196a" stroke-width="2"/>
+          <!-- Stone 2: sits on top, medium -->
+          <polygon points="48,132 332,122 305,40 65,50" fill="none" stroke="#e0196a" stroke-width="2"/>
+          <line x1="48" y1="132" x2="305" y2="40" stroke="#e0196a" stroke-width="2"/>
+          <line x1="332" y1="122" x2="65" y2="50" stroke="#e0196a" stroke-width="2"/>
+        </svg>
+        <div class="preview-text">
+          <h2>From quote to payment, built the way your business works.</h2>
+          <p>Custom CPQ and client-facing sales tools for manufacturers, interior designers, and specialty trades.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
