@@ -285,7 +285,6 @@ section.section-header h2::after {
   display: block;
   margin-top: 0.9rem;
   width: 56px;
-  border-bottom: 1px solid rgba(28, 28, 26, 0.22);
 }
 
 section.section-header.no-rule h2::after {
@@ -732,6 +731,26 @@ a.back-link:hover,
   color: var(--text-muted);
   margin-top: 20px;
   font-style: italic;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 1024px) {
