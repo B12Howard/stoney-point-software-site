@@ -74,6 +74,7 @@ header.site-header {
   background: rgba(252, 249, 246, 0.92);
   backdrop-filter: blur(7px);
   border-bottom: 0.5px solid var(--outline-soft);
+  overflow: visible;
 }
 
 .header-inner {
@@ -84,7 +85,8 @@ header.site-header {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 2rem;
+  height: 5.5rem;
+  padding: 0 2rem;
 }
 
 .header-brand {
@@ -96,9 +98,11 @@ header.site-header {
 
 .site-logo {
   width: auto;
-  height: 64px;
+  height: 140px;
   object-fit: contain;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 
 header.site-header h1 {
@@ -264,9 +268,26 @@ button[type="submit"]:hover {
   content: "";
 }
 
+/* Alternating section backgrounds */
+.page-section {
+  border: 0.5px solid var(--outline-soft);
+}
+
+.page-section + .page-section {
+  margin-top: -0.5px;
+}
+
+.page-section:nth-child(odd) {
+  background: var(--background);
+}
+
+.page-section:nth-child(even) {
+  background: var(--surface-low);
+}
+
 /* Section framing */
 section.section-header {
-  padding: var(--stack-xl) 2rem var(--stack-md);
+  padding: var(--stack-lg) 2rem var(--stack-md);
   text-align: left;
 }
 
@@ -660,7 +681,6 @@ footer {
   width: min(100%, var(--container-max));
   margin: var(--stack-xl) auto 0;
   padding: 2rem;
-  border-top: 0.5px solid var(--outline-soft);
   color: var(--text-muted);
   font-size: 0.9rem;
   text-align: left;
@@ -760,7 +780,7 @@ a.back-link:hover,
   }
 
   .site-logo {
-    height: 72px;
+    height: 80px;
   }
 }
 
