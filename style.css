@@ -316,6 +316,20 @@ section.section-header.no-rule h2::after {
   margin-bottom: var(--stack-lg);
 }
 
+.video-embed {
+  max-width: 1040px;
+  margin: var(--stack-lg) auto;
+  padding: 0 2rem;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 4px;
+}
+
 .content h3,
 .content h4,
 .service-item h3,
