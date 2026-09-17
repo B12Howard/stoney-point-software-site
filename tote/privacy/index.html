@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy policy for the Remodel Showroom Tote Extension, the Chrome extension that lets Tote staff create Totes from a GatherIt project page." />
+  <title>Privacy Policy — Totes Chrome Extension</title>
+  <link rel="icon" href="../../images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../../index.html"><img class="site-logo" src="../../images/stoneypoint-logo.png" alt="Stoney Point Software Logo" /></a>
+        <span class="brand-name">Stoney Point Software</span>
+      </div>
+      <nav class="site-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../">Totes</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-shape" src="../../images/hero-shape.svg" alt="" aria-hidden="true" />
+      <div class="hero-text">
+        <h2>Privacy Policy</h2>
+        <p>Remodel Showroom Tote Extension &mdash; Effective September 17, 2026</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <p>
+        Remodel Showroom Tote Extension (&ldquo;Extension&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is a Chrome extension that lets Tote staff create purchasable Totes directly from a GatherIt project page, using their own firm's Tote account.
+      </p>
+
+      <h3>1. Information We Collect</h3>
+      <p>The Extension may collect or process:</p>
+      <ul class="custom-bullets">
+        <li>
+          <strong>Account credentials:</strong>
+          <ul class="custom-bullets">
+            <li>The Tote account email and password you enter to connect the Extension. Your password is sent once, over HTTPS, to authenticate you, and is never stored by the Extension.</li>
+            <li>The session tokens (a short-lived access token and a longer-lived refresh token) issued after you connect, used to keep you signed in without re-entering your password.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Firm/tenant configuration:</strong>
+          <ul class="custom-bullets">
+            <li>Your Tote subdomain (which firm's Tote account you're connecting to)</li>
+            <li>An optional custom API base URL, if you set one for local/dev testing (e.g. <code>localhost</code> or an <code>ngrok</code> tunnel)</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Personally identifiable information (PII):</strong>
+          <ul class="custom-bullets">
+            <li>Salesperson name entered by you in Extension settings</li>
+            <li>Data from the <code>intercomSettings</code> object on a Gather project page, when present (used to auto-fill the salesperson name; may include a name, email, or other fields the page exposes)</li>
+            <li>Your GatherIt API key, entered by you in Settings and sent to your firm's Tote backend so it can fetch data from GatherIt; not retained locally after saving</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Gather project data:</strong>
+          <ul class="custom-bullets">
+            <li>Project name and project ID from Gather pages</li>
+            <li>Item IDs and item names for the items you select, and which of those items you mark as customer-selectable</li>
+            <li>Deposit and discount choices you make when creating a Tote</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Local Tote-creation history:</strong>
+          <ul class="custom-bullets">
+            <li>A record of Totes you've created (Tote URL, project ID/name, item IDs/names, timestamps, and the backend's response), kept so you can view your history in the popup</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Technical/operational data:</strong>
+          <ul class="custom-bullets">
+            <li>Extension event logs (up to the 50 most recent entries) for status/error visibility in the popup</li>
+          </ul>
+        </li>
+      </ul>
+      <p>The Extension does not read, upload, or transmit spreadsheet or other file contents.</p>
+
+      <h3>2. How We Use Information</h3>
+      <p>We use collected information to:</p>
+      <ul class="custom-bullets">
+        <li>Authenticate you and identify which firm's Tote backend to communicate with</li>
+        <li>Create Totes from the Gather project and item data you select</li>
+        <li>Populate or assist optional fields (such as salesperson name)</li>
+        <li>Let your firm's Tote backend fetch data from GatherIt on your behalf</li>
+        <li>Provide extension status, Tote-creation history, and logs for troubleshooting</li>
+      </ul>
+
+      <h3>3. Where Data Is Stored</h3>
+      <ul class="custom-bullets">
+        <li><strong>Locally on your device:</strong> The Extension stores settings and operational data using Chrome extension storage and local browser databases (for example, <code>chrome.storage.local</code> and IndexedDB). Your account password is never stored locally in any form.</li>
+        <li><strong>Remotely (when you connect or create a Tote):</strong> Login credentials, your GatherIt API key, and Gather project/item data are sent over HTTPS to your firm's own Tote backend, at <code>https://{your-subdomain}.totesyes.com</code> (or a custom URL you explicitly configure for testing). Each firm's Tote backend only receives data from that firm's own users &mdash; there is no shared or third-party backend.</li>
+        <li><strong>Read from Gather, not sent back:</strong> The Extension reads project and item data from GatherIt pages (<code>go.gatherit.co</code>) you have open, but does not transmit anything back to GatherIt.</li>
+      </ul>
+
+      <h3>4. Data Sharing</h3>
+      <p>We do not sell personal data.</p>
+      <p>Data is shared only with your own firm's Tote backend, as necessary to authenticate you and perform the Tote-creation functionality described above.</p>
+
+      <h3>5. Data Retention</h3>
+      <ul class="custom-bullets">
+        <li><strong>Local extension data</strong> remains until cleared by the user, overwritten, or removed by uninstalling the extension. Event logs are automatically capped at the 50 most recent entries.</li>
+        <li><strong>Server-side data retention</strong> depends on your firm's Tote backend's own policies and operational requirements.</li>
+      </ul>
+
+      <h3>6. User Controls</h3>
+      <p>You can:</p>
+      <ul class="custom-bullets">
+        <li>Edit or remove Extension settings in the popup</li>
+        <li>Disconnect your account at any time, which clears your stored session tokens</li>
+        <li>Remove individual Tote-creation history entries, or clear all extension-local data via browser extension storage controls</li>
+        <li>Uninstall the Extension to stop all future collection by the Extension</li>
+      </ul>
+
+      <h3>7. Security</h3>
+      <p>We use HTTPS for all network requests. Authentication uses a short-lived access token (refreshed automatically) plus a long-lived, rotating refresh token, rather than storing your password.</p>
+      <p>No method of electronic transmission or storage is 100% secure, but we take reasonable measures to protect data handled by the Extension.</p>
+
+      <h3>8. Children's Privacy</h3>
+      <p>The Extension is not intended for children under 13, and we do not knowingly collect information from children under 13.</p>
+
+      <h3>9. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time.</p>
+      <p>When updated, we will revise the &ldquo;Effective date&rdquo; above.</p>
+
+      <h3>10. Contact</h3>
+      <p>For privacy questions or requests, contact:</p>
+      <ul class="custom-bullets">
+        <li><strong>Email:</strong> howard@stoneypointsoftware.com</li>
+        <li><strong>Company/Organization:</strong> Stoney Point Software LLC</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Stoney Point Software LLC</p>
+    <p>
+      <a href="../../index.html">Home</a> ·
+      <a href="../">Totes</a> ·
+      <a href="../../index.html#contact">Contact</a> ·
+      <a href="https://www.linkedin.com/company/stoney-point-software" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </footer>
+  <script src="../../scroll-effects.js"></script>
+</body>
+</html>
