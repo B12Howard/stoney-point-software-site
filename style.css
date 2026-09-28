@@ -180,24 +180,38 @@ nav a.active {
   z-index: 1;
 }
 
-/* SPLIT LAYOUT — uncomment when product mockup is ready
+/* Split hero: text on the left, product screenshot on the right */
 .hero-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: var(--stack-lg);
   align-items: center;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-}
-
 .hero-visual {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 10px solid var(--text);
+  border-radius: 34px;
+  box-shadow: 0 24px 48px rgba(28, 28, 26, 0.18);
+}
+
+/* Keep the background shape faint behind a split hero so it doesn't cross the headline */
+@media (min-width: 769px) {
+  .hero-with-visual .hero-shape {
+    animation: none;
+    opacity: 0.1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -205,11 +219,10 @@ nav a.active {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    display: none;
+  .hero-visual img {
+    max-width: 240px;
   }
 }
-*/
 
 .hero h1,
 .hero h2 {
@@ -876,5 +889,80 @@ a.back-link:hover,
 
   .modal.active {
     padding: 0;
+  }
+}
+
+/* Product screenshots (Tote pages) */
+.shot {
+  margin: var(--stack-md) 0 0;
+}
+
+.shot a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface);
+  border: 1px solid var(--outline-soft);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(28, 28, 26, 0.08);
+}
+
+.shot.narrow img {
+  max-width: 420px;
+}
+
+.shot figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Text beside a screenshot, alternating sides */
+.feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: var(--stack-lg);
+  align-items: center;
+  margin-bottom: var(--stack-xl);
+}
+
+.feature-row.flip > :first-child {
+  order: 2;
+}
+
+.feature-row h3 {
+  margin-top: 0;
+}
+
+.feature-row .shot {
+  margin-top: 0;
+}
+
+.step-number {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: var(--stack-md);
+    margin-bottom: var(--stack-lg);
+  }
+
+  .feature-row.flip > :first-child {
+    order: 0;
   }
 }
