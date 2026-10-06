@@ -9,8 +9,17 @@
 // In a partial, {{root}} becomes the relative path from the page back to the
 // site root ("", "../", "../../"), so links work at any folder depth and in
 // local preview. {{active:<section>}} becomes class="active" on the page's own
-// nav link, where the section comes from the page's folder (tote/, blog/, or
-// the home page).
+// nav link, where the section comes from the page's folder (work/, tote/,
+// blog/, or the home page).
+//
+// Blog posts are listed automatically. A post in blog/<slug>/index.html
+// declares <meta name="sp:project" content="ironsmith"> and
+// <meta name="sp:date" content="2026-09-28">; its title is its <h1>. Pages
+// list posts with a block of the form
+//   <!-- posts:all -->  <!-- /posts -->        every post (blog index)
+//   <!-- posts:latest:3 -->  <!-- /posts -->   the newest three
+//   <!-- posts:ironsmith -->  <!-- /posts -->  one project's posts
+// and the build fills in the list between the two comments.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -54,6 +63,7 @@ function rootPrefix(file) {
 function section(file) {
   const rel = path.relative(ROOT, file).split(path.sep).join("/");
   if (rel === "index.html") return "home";
+  if (rel.startsWith("work/")) return "work";
   if (rel.startsWith("tote/")) return "tote";
   if (rel.startsWith("blog/") || rel.startsWith("blog")) return "blog";
   return null;
@@ -79,16 +89,72 @@ function stamp(file, html) {
   return html;
 }
 
+// Project slugs and their display names, used for post labels.
+const PROJECTS = {
+  ironsmith: "Ironsmith",
+  kynzo: "Kynzo",
+  "engage-ai": "Engage AI",
+  totes: "Totes",
+  civiczone: "CivicZone",
+  "hanford-rice-bowl": "Hanford Rice Bowl",
+  "phoenix-hamptons": "Phoenix Hamptons",
+};
+
+function readPosts() {
+  const blogDir = path.join(ROOT, "blog");
+  const posts = [];
+  for (const entry of fs.readdirSync(blogDir, { withFileTypes: true })) {
+    const file = path.join(blogDir, entry.name, "index.html");
+    if (!entry.isDirectory() || !fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, "utf8");
+    const meta = (name) => html.match(new RegExp(`<meta name="${name}" content="([^"]*)"`))?.[1] ?? "";
+    const title = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1].replace(/<[^>]+>/g, "").trim();
+    if (!title) continue;
+    posts.push({ slug: entry.name, title, project: meta("sp:project"), date: meta("sp:date") });
+  }
+  return posts.sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+}
+
+function formatDate(date) {
+  if (!date) return "";
+  const [y, m, d] = date.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+}
+
+function renderPosts(posts, file, indent) {
+  const root = rootPrefix(file);
+  if (!posts.length) return [`${indent}  <p class="post-empty">No posts yet.</p>`];
+  const lines = [`${indent}  <ul class="post-list">`];
+  for (const post of posts) {
+    const label = PROJECTS[post.project] ? `<span class="post-project">${PROJECTS[post.project]}</span>` : "";
+    lines.push(
+      `${indent}    <li><a href="${root}blog/${post.slug}/"><span class="post-meta"><time datetime="${post.date}">${formatDate(post.date)}</time>${label}</span><span class="post-title">${post.title}</span></a></li>`,
+    );
+  }
+  lines.push(`${indent}  </ul>`);
+  return lines;
+}
+
+function stampPosts(file, html, posts) {
+  return html.replace(/([ \t]*)<!-- posts:([\w:-]+) -->[\s\S]*?<!-- \/posts -->/g, (_m, indent, spec) => {
+    const [kind, arg] = spec.split(":");
+    const list =
+      kind === "all" ? posts : kind === "latest" ? posts.slice(0, Number(arg) || 3) : posts.filter((p) => p.project === kind);
+    return [`${indent}<!-- posts:${spec} -->`, ...renderPosts(list, file, indent), `${indent}<!-- /posts -->`].join("\n");
+  });
+}
+
 function escapeRegExp(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 const files = walk(ROOT);
+const posts = readPosts();
 const stale = [];
 
 for (const file of files.filter((f) => f.endsWith(".html"))) {
   const html = fs.readFileSync(file, "utf8");
-  const updated = stamp(file, html);
+  const updated = stampPosts(file, stamp(file, html), posts);
   if (updated === html) continue;
   stale.push(path.relative(ROOT, file));
   if (!check) fs.writeFileSync(file, updated);

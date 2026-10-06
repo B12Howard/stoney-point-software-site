@@ -13,109 +13,105 @@
     <!-- header: generated from _partials/header.html by scripts/build.mjs. Edit the partial, not this block. -->
     <header class="site-header">
       <div class="header-inner">
-        <div class="header-brand">
-          <a href="index.html"><img class="site-logo" src="images/stoneypoint-logo.png" alt="Stoney Point Software Logo" /></a>
+        <a class="header-brand" href="index.html">
+          <img class="site-logo" src="images/stoneypoint-mark.png" alt="" />
           <span class="brand-name">Stoney Point Software</span>
-        </div>
+        </a>
         <nav class="site-nav">
-          <a href="index.html" class="active">Home</a>
-          <a href="tote/">Tote</a>
+          <a href="index.html#work">Work</a>
           <a href="blog/">Blog</a>
-          <a href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="index.html#contact">Get in touch</a>
         </nav>
       </div>
     </header>
     <!-- /header -->
 
     <main>
-      <section class="hero hero-home">
-        <img class="hero-shape" src="images/hero-shape.svg" alt="" aria-hidden="true" />
-        <div class="hero-text">
-          <h1>Client approvals, payments, and CPQ systems</h1>
-          <p>For manufacturers, interior designers, remodelers, and event planners</p>
+      <section class="wrap intro">
+        <h1>We build custom software for businesses, then stay on to support it.</h1>
+        <p>Quoting portals, client approval tools, online ordering and public search sites. After launch we keep maintaining each one and supporting the people who use it.</p>
+        <div class="cta">
+          <a href="#contact">Get in touch →</a>
+        </div>
+      </section>
+
+      <section class="wrap" id="work">
+        <h2 class="work-title">Apps we've built for manufacturers, interior designers, recruiters and restaurants</h2>
+        <ol class="work-list">
+          <li class="project-row">
+            <p class="kicker">01 — Ironsmith</p>
+            <h2><a href="work/ironsmith/">Ironsmith's quotes, sales orders and commission reports, in one portal</a></h2>
+            <a class="frame-link" href="work/ironsmith/"><figure class="frame"><img src="images/work/ironsmith/01-projects.jpg" alt="Ironsmith portal projects list, with project names blurred" width="1424" height="723" /></figure></a>
+            <div class="lede">
+              <p>The price of a tree grate depends on many parameters. The portal stores Ironsmith's pricing rules once, so staff pick a product and the portal works out the price.</p>
+              <a class="read-link" href="work/ironsmith/">Read about Ironsmith →</a>
+            </div>
+          </li>
+          <li class="project-row">
+            <p class="kicker">02 — Kynzo</p>
+            <h2><a href="work/kynzo/">LinkedIn commenting for recruiters, connected to the CRMs they already use</a></h2>
+            <figure class="frame"><img src="images/work/kynzo/01-feed.jpg" alt="The Kynzo customer feed, with names, photos and posts blurred" width="1477" height="812" loading="lazy" /></figure>
+            <div class="lede">
+              <p>Kynzo pulls posts from the accounts a recruiter is targeting and drafts a comment for each one. It integrates with major recruiting CRMs, including JobAdder, Loxo, Recruit CRM and HubSpot. Built and maintained for the Kynzo team.</p>
+              <a class="read-link" href="work/kynzo/">Read about Kynzo →</a>
+            </div>
+          </li>
+          <li class="project-row">
+            <p class="kicker">03 — Totes</p>
+            <h2><a href="work/totes/">Your client picks, agrees and pays from one link.</a></h2>
+            <a class="frame-link" href="work/totes/"><figure class="frame"><img src="images/tote/client-review-desktop.jpg" alt="A client reviewing items in a tote" width="1600" height="960" loading="lazy" /></figure></a>
+            <div class="lede">
+              <p>One link where your client approves products, accepts your terms and pays. Built for interior designers and remodelers, with payments going to your own gateway. It started as an app for one firm, Remodel Showroom.</p>
+              <a class="read-link" href="work/totes/">Read about Totes →</a>
+            </div>
+          </li>
+          <li class="project-row">
+            <p class="kicker">04 — CivicZone</p>
+            <h2><a href="work/civiczone/">Municipal land use bylaws, searchable section by section</a></h2>
+            <figure class="frame"><img src="images/work/civiczone/01-reader.jpg" alt="A bylaw section with a linked definition open in the reference panel" width="1388" height="868" loading="lazy" /></figure>
+            <div class="lede">
+              <p>CivicZone turns a land use bylaw PDF into a website with a table of contents, defined terms that link to their definitions, and search that matches by meaning as well as keywords. We built the demo sites on behalf of CivicZone and <a href="https://bluerockplanning.ca/" target="_blank" rel="noopener">Blue Rock Planning</a>.</p>
+              <a class="read-link" href="work/civiczone/">Read about CivicZone →</a>
+            </div>
+          </li>
+          <li class="project-row">
+            <p class="kicker">05 — Hanford Rice Bowl</p>
+            <h2><a href="work/hanford-rice-bowl/">Online ordering connected to the restaurant's own point of sale</a></h2>
+            <a class="frame-link" href="work/hanford-rice-bowl/"><figure class="frame"><img src="images/work/hanford-rice-bowl/01-menu.jpg" alt="The Rice Bowl online menu" width="1405" height="840" loading="lazy" /></figure></a>
+            <div class="lede">
+              <p>A storefront built on your product catalog, with a recommendation engine trained on your customers' order history. The menu comes from the POS, and online orders go back to it for staff to accept or reject.</p>
+              <a class="read-link" href="work/hanford-rice-bowl/">Read about Rice Bowl →</a>
+            </div>
+          </li>
+          <li class="project-row">
+            <p class="kicker">06 — Engage AI</p>
+            <h2>A LinkedIn commenting extension we maintain</h2>
+            <div class="lede">
+              <p>We maintain Engage AI, a Chrome extension that writes LinkedIn comments with ChatGPT from inside the feed.</p>
+              <a class="read-link" href="https://engage-ai.co/" target="_blank" rel="noopener">engage-ai.co ↗</a>
+            </div>
+          </li>
+          <li class="project-row">
+            <p class="kicker">07 — Phoenix Fireplace</p>
+            <h2>The website for Eastern Long Island's fireplace showroom</h2>
+            <a class="frame-link" href="https://www.phoenixhamptons.com/" target="_blank" rel="noopener"><figure class="frame"><img src="images/work/phoenix-hamptons/01-home.jpg" alt="The Phoenix Fireplace homepage" width="1405" height="840" loading="lazy" /></figure></a>
+            <div class="lede">
+              <p>We manage the website for Phoenix Fireplace, a fireplace showroom and installer in Westhampton, New York.</p>
+              <a class="read-link" href="https://www.phoenixhamptons.com/" target="_blank" rel="noopener">phoenixhamptons.com ↗</a>
+            </div>
+          </li>
+        </ol>
+        <div class="prose project-cta wide">
+          <p>Want something like this for your business?</p>
           <div class="cta">
-            <a href="#contact">Book a call →</a>
+            <a href="#contact">Get in touch →</a>
           </div>
         </div>
       </section>
 
-      <!-- SPLIT LAYOUT — uncomment when product mockup is ready
-      <section class="hero hero-split">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-          <h2>From quote to payment, built the way your business works.</h2>
-          <p>Custom CPQ and client-facing sales tools for manufacturers, interior designers, and specialty trades.</p>
-          <div class="cta">
-            <a href="#contact">Book a call →</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          [Product mockup goes here]
-        </div>
-      </section>
-      -->
-
-      <!-- Mission — hidden, restore if needed
-      <div class="page-section">
-        <section class="content">
-          <p>
-            The tools manufacturers and designers need to quote accurately and collect payment have always existed. They were priced for companies ten times your size, built for workflows that don't match yours, and designed to keep your data in someone else's database.
-          </p>
-          <p>
-            We build the same class of software — CPQ systems, client approval tools, payment collection — at a price that makes sense for a 10-person firm. Your process stays intact. Your data stays yours.
-          </p>
-        </section>
-      </div>
-      -->
-
-      <!-- Industries We Serve — hidden, restore if needed
       <div class="page-section">
         <section class="section-header">
-          <h2>Industries We Serve</h2>
-        </section>
-        <section class="content">
-          <ul class="usecase-chips" aria-label="Client sectors we work with">
-            <li class="chip">Manufacturing</li>
-            <li class="chip">Construction & Home Remodeling</li>
-            <li class="chip">Interior Design</li>
-            <li class="chip">Restaurants</li>
-          </ul>
-        </section>
-      </div>
-      -->
-
-      <div class="page-section">
-        <section class="section-header">
-          <h2>What we build</h2>
-        </section>
-        <section class="content">
-          <div class="services-grid">
-            <div class="service-item">
-              <h3><a href="cpq/">CPQ Systems</a></h3>
-              <p>Your pricing rules — configurations, materials, tiered costs, commissions — encoded once, applied on every quote. Built for manufacturers still running pricing logic in Access or aging custom tools.</p>
-              <p><a href="cpq/">Learn more →</a></p>
-            </div>
-            <div class="service-item">
-              <h3><a href="tote/">Tote</a></h3>
-              <p>One link where your client approves products, accepts your terms and pays. Built for interior designers and remodelers, with payments going to your own gateway.</p>
-              <p><a href="tote/">Learn more →</a></p>
-            </div>
-            <div class="service-item">
-              <h3><a href="pos/">Custom Point of Sale</a></h3>
-              <p>A point of sale you buy once and own outright — runs on the hardware you already have. No monthly fees, no licensing costs.</p>
-              <p><a href="pos/">Learn more →</a></p>
-            </div>
-            <div class="service-item">
-              <h3>Custom Online Ordering</h3>
-              <p>A storefront built on your product catalog, with a recommendation engine trained on your customers' order history.</p>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <div class="page-section">
-        <section class="section-header">
-          <h2>Trusted By</h2>
+          <h2>Businesses served</h2>
         </section>
         <section class="content">
           <div class="client-logos">
@@ -138,6 +134,20 @@
               <img src="images/00_logo_blue.png" alt="Engage AI" />
             </a>
           </div>
+        </section>
+      </div>
+
+      <div class="page-section">
+        <section class="section-header">
+          <h2>From the blog</h2>
+        </section>
+        <section class="content">
+          <!-- posts:latest:3 -->
+            <ul class="post-list">
+              <li><a href="blog/collect-payment-before-ordering/"><span class="post-meta"><time datetime="2026-09-28">Sep 28, 2026</time><span class="post-project">Totes</span></span><span class="post-title">How to collect payment from clients before you place the order</span></a></li>
+            </ul>
+          <!-- /posts -->
+          <p><a href="blog/">All posts →</a></p>
         </section>
       </div>
 
@@ -179,10 +189,14 @@
     </main>
 
     <!-- footer: generated from _partials/footer.html by scripts/build.mjs. Edit the partial, not this block. -->
-    <footer>
+    <footer class="site-footer">
+      <p class="footer-contact">
+        <a href="mailto:howard@stoneypointsoftware.com">howard@stoneypointsoftware.com</a> ·
+        <a href="tel:+2135346018">(213) 534-6018</a>
+      </p>
       <p>© 2026 Stoney Point Software LLC</p>
       <p>
-        <a href="index.html">Home</a> ·
+        <a href="index.html#work">Work</a> ·
         <a href="tote/">Tote</a> ·
         <a href="blog/">Blog</a> ·
         <a href="index.html#contact">Contact</a> ·
